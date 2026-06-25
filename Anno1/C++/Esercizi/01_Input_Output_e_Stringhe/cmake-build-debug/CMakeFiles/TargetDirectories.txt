@@ -1,0 +1,3 @@
+C:/Users/dadem/Desktop/C++/Esercizi/01_Input_Output_e_Stringhe/cmake-build-debug/CMakeFiles/01_Input_Output_e_Stringhe.dir
+C:/Users/dadem/Desktop/C++/Esercizi/01_Input_Output_e_Stringhe/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/dadem/Desktop/C++/Esercizi/01_Input_Output_e_Stringhe/cmake-build-debug/CMakeFiles/rebuild_cache.dir
