@@ -167,8 +167,3 @@ int main() {
 
 ```
 
-```
-
-Salva pure tutto e fai il push su GitHub. Adesso la tua guida ai fondamenti dell'OOP è solida e completa! Quando vuoi ricominciare con i vettori, fammi un fischio.
-
-```
