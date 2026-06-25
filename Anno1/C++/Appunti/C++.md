@@ -98,3 +98,77 @@ int main() {
 }
 
 ```
+
+## 3.1 L'Overloading (Sovraccaricamento)
+
+### Definizione
+L'overloading è una funzionalità del C++ che permette di definire più funzioni (o costruttori) con lo **stesso identico nome**, a patto che abbiano una lista di parametri differente (per tipo o per numero). Il compilatore sceglie automaticamente quale versione eseguire in base ai dati passati.
+
+### Punti Chiave
+* **Differenza col C**: In C ogni funzione deve avere un nome unico. In C++ si può riutilizzare lo stesso nome per azioni logicamente identiche applicate a dati diversi.
+* **Firma della funzione**: Il C++ distingue le funzioni basandosi solo sui parametri (tipo e ordine), non sul tipo di ritorno.
+* **Pulizia del codice**: Evita di dover inventare nomi diversi per la stessa operazione (es. `stampaInt()`, `stampaFloat()`).
+
+### Codice Minimo Funzionante
+```cpp
+#include <iostream>
+
+// Stesso nome, parametri diversi: questo è l'overloading
+void stampa(int n) { std::cout << "Intero: " << n << std::endl; }
+void stampa(double x) { std::cout << "Decimale: " << x << std::endl; }
+
+int main() {
+    stampa(5);    // Chiama la versione per int
+    stampa(3.14); // Chiama la versione per double
+    return 0;
+}
+
+```
+
+---
+
+## 3.2 Il Costruttore di Default
+
+### Definizione
+
+Il costruttore di default è un costruttore speciale che non accetta alcun parametro. Serve a inizializzare un oggetto con valori predefiniti o neutri (es. variabili a `0` o stringhe vuote) quando non vengono fornite informazioni al momento della sua creazione.
+
+### Punti Chiave
+
+* **Scomparsa automatica**: Se nella classe non scrivi nessun costruttore, il C++ ne genera uno di default invisibile. Se ne scrivi uno tu con parametri, quello di default sparisce.
+* **Applicazione dell'Overloading**: Per poter creare sia oggetti vuoti che oggetti con dati pronti, bisogna scrivere entrambi i costruttori sfruttando l'overloading.
+* **Sintassi nel main**: Un oggetto di default si crea senza parentesi tonde (`Rettangolo r;`). Mettere le parentesi (`Rettangolo r();`) è un errore perché il compilatore lo scambia per il prototipo di una funzione.
+
+### Codice Minimo Funzionante
+
+```cpp
+#include <iostream>
+
+class Rettangolo {
+private:
+    int base, altezza;
+
+public:
+    // Overloading dei costruttori su una sola riga
+    Rettangolo() : base(0), altezza(0) {}             // Costruttore di default
+    Rettangolo(int b, int a) : base(b), altezza(a) {} // Costruttore parametrico
+
+    int calcolaArea() { return base * altezza; }
+};
+
+int main() {
+    Rettangolo r1;       // Chiama il costruttore di default (0x0)
+    Rettangolo r2(4, 5); // Chiama il costruttore parametrico (4x5)
+
+    std::cout << "Area r1: " << r1.calcolaArea() << std::endl; // Stampa 0
+    std::cout << "Area r2: " << r2.calcolaArea() << std::endl; // Stampa 20
+    return 0;
+}
+
+```
+
+```
+
+Salva pure tutto e fai il push su GitHub. Adesso la tua guida ai fondamenti dell'OOP è solida e completa! Quando vuoi ricominciare con i vettori, fammi un fischio.
+
+```
